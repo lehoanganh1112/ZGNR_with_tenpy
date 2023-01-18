@@ -3,13 +3,13 @@ from model_setup import *
 import h5py
 
 # <---------- 1) Generate initial state ---------->
-M = ribbon4('dummy')
+M = ribbon4_clean('dummy')
 print("Is MPO hermitian? ", M.H_MPO.is_hermitian())
 
 # Geometry of ribbon: Lx = Lx+1, Ly = Ly*2
-Lx = 121
+Lx = 31
 Ly = 2
-dope = 12
+dope = 0
 Nsites = int((Lx-1)*Ly*2 + Ly)
 
 
@@ -40,8 +40,8 @@ simul_para = {'simulation_class': GroundStateSearch,
 'save_psi': True,  # don't save full wave function - less disk space, but can't resume/redo measurements!
 
 
-'model_class':  ribbon4,
-'model_params': {'dummy':'dummy'},
+'model_class':  ribbon4_disorder,
+# 'model_params': {'type':'disorder'},
 
 # Initial state setup
 'initial_state_builder_class': InitialStateBuilder,
