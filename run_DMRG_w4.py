@@ -6,10 +6,12 @@ import h5py
 M = ribbon4_clean('dummy')
 print("Is MPO hermitian? ", M.H_MPO.is_hermitian())
 
-# Geometry of ribbon: Lx = Lx+1, Ly = Ly*2
-Lx = 31
+# Geometry of ribbon: Lx = Lx-1, Ly = Ly*2
+# E.g: Lx=121 and Ly=2 means Lx=120 and Ly=4
+Lx = 31 
 Ly = 2
 dope = 0
+gamma = 0.5
 Nsites = int((Lx-1)*Ly*2 + Ly)
 
 
@@ -77,11 +79,15 @@ psi_test = results['psi']
 psi_test.canonical_form()
 
 sz = psi_test.expectation_value('Sz')
-np.savetxt('sz_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt', sz)
-
-
-ee = psi_test.entanglement_entropy()
-np.savetxt('ee_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt', ee)
-
 ntot = psi_test.expectation_value('Ntot')
-np.savetxt('ntot_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt' ,ntot)
+ee = psi_test.entanglement_entropy()
+
+# # Clean
+# np.savetxt('sz_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt', sz)
+# np.savetxt('ee_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt', ee)
+# np.savetxt('ntot_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_clean.txt' ,ntot)
+
+# Disorder
+np.savetxt('sz_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_disorder.txt', sz)
+np.savetxt('ee_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_disorder.txt', ee)
+np.savetxt('ntot_L'+str(int(Lx-1))+'W'+str(int(Ly*2))+'_dope'+str(dope)+'_disorder.txt' ,ntot)
