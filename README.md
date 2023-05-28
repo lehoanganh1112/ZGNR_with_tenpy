@@ -1,4 +1,9 @@
-# tenpy_simulation
- Private DMRG calculation with tenpy.
+# Tenpy_simulation
+## Description
+DMRG calculation using package tenpy.
 
- The calculation here are performed on KISTI Supercomputing Center (South Korea).
+The calculation here was performed on KISTI Supercomputing Center (South Korea).
+
+## A result
+Disorder-induced bipartite entanglement entropy
+![Alt text](dmrg_transfer_gamma2.png?raw=true "Title")

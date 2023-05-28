@@ -35,7 +35,7 @@ class ribbon4_clean(CouplingModel, MPOModel):
     def __init__(self, dummy):
         # Geometry of ribbon: Lx = Lx-1, Ly = Ly*2
         # E.g: Lx=121 and Ly=2 means Lx=120 and Ly=4
-        Lx = 31
+        Lx = 61
         Ly = 2
         U = 1
         t = 1
@@ -69,7 +69,7 @@ class ribbon4_disorder(CouplingModel, MPOModel):
     def __init__(self, dummy):
         # Geometry of ribbon: Lx = Lx-1, Ly = Ly*2
         # E.g: Lx=121 and Ly=2 means Lx=120 and Ly=4
-        Lx = 31
+        Lx = 30
         Ly = 2
         U = 1
         t = 1

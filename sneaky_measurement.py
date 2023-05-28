@@ -6,7 +6,7 @@ import tenpy
 import numpy as np
 import h5py
 
-Lx = 31
+Lx = 30
 Ly = 2
 dope = 0
 gamma = 0.5

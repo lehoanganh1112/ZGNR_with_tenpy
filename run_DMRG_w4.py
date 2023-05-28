@@ -8,7 +8,7 @@ print("Is MPO hermitian? ", M.H_MPO.is_hermitian())
 
 # Geometry of ribbon: Lx = Lx-1, Ly = Ly*2
 # E.g: Lx=121 and Ly=2 means Lx=120 and Ly=4
-Lx = 31 
+Lx = 30 
 Ly = 2
 dope = 0
 gamma = 0.5
